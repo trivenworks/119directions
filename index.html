@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" data-ui-version="comparison-v2.4">
+<html lang="ko" data-ui-version="comparison-v2.5">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin">
 <title>서울 상권 혼잡과 119 접근 경로</title>
@@ -20,15 +20,15 @@ header{background:var(--paper);border-bottom:1px solid var(--line)}.wrap,.worksp
 
 .result-summary{--recommendation-color:#006b45;background:#fff;border:1px solid var(--line);border-top:4px solid var(--recommendation-color);border-radius:12px;padding:22px 24px;margin-bottom:20px;scroll-margin-block-start:18px}.result-summary:focus-visible{outline:3px solid #96394e;outline-offset:3px}.recommendation-heading{display:flex;justify-content:space-between;align-items:start;gap:20px}.result-eyebrow{font-size:.75rem;font-weight:700;color:var(--recommendation-color);margin-bottom:7px}.result-summary h2{font-size:1.375rem;line-height:1.4;letter-spacing:-.02em}.recommendation-reason{font-size:.875rem;line-height:1.7;margin-top:8px;max-width:75ch;color:var(--muted)}.recommendation-pill{white-space:nowrap;border:1px solid #7d8c9d;border-radius:24px;font-size:.75rem;padding:7px 11px;line-height:1.5}.comparison-highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:22px 0 0}.comparison-highlights dt{font-size:.8125rem;color:var(--muted);line-height:1.5}.comparison-highlights dd{font-size:1.75rem;line-height:1.4;font-weight:700;margin:6px 0;letter-spacing:-.02em;font-variant-numeric:tabular-nums}.comparison-highlights .metric-note,.recommendation-note{font-weight:400;letter-spacing:0;font-size:.75rem;line-height:1.7;color:var(--muted)}.recommendation-note{margin-top:16px}.route-card.is-recommended{border:2px solid var(--route-color);border-top-width:4px}.recommendation-tag{font-size:.6875rem;line-height:1.5;border:1px solid currentColor;border-radius:4px;padding:1px 5px;margin-inline-start:auto;white-space:nowrap;color:var(--ink)}.route-delta{margin-top:10px;font-size:.8125rem;line-height:1.7;color:var(--ink);font-variant-numeric:tabular-nums}
 @media(max-width:860px){.comparison-highlights{gap:16px}.comparison-highlights dd{font-size:1.375rem}}@media(max-width:580px){.result-summary{padding:18px 16px}.recommendation-heading{flex-direction:column;gap:10px}.comparison-highlights{grid-template-columns:1fr;gap:18px}.comparison-highlights dd{font-size:1.5rem}.result-summary h2{font-size:1.1875rem}}
-.release-tag{display:inline-block;margin-inline-start:8px;padding:2px 7px;border:1px solid #96394e;border-radius:4px;letter-spacing:0;font-size:.6875rem;line-height:1.5;white-space:nowrap}.filters>.destination{display:grid;gap:8px;min-width:0;font-size:.75rem;font-weight:700;line-height:1.4}.destination-picker{position:relative;min-width:0}.destination-picker:after{content:'⌄';position:absolute;inset-inline-end:12px;top:50%;transform:translateY(-50%);pointer-events:none}.destination-picker input{padding-inline-end:30px}.place-options{position:absolute;inset-inline:0;top:calc(100% + 6px);z-index:60;max-height:280px;overflow-y:auto;overscroll-behavior:contain;background:#fff;border:1px solid #7d8c9d;border-radius:8px;box-shadow:0 8px 24px #20304722;padding:4px;min-width:0}.place-option{min-height:44px;padding:11px 10px;border-radius:4px;cursor:pointer;font-size:.875rem;font-weight:400;line-height:1.5;overflow-wrap:anywhere}.place-option[aria-selected=true]{background:#203047;color:#fff;outline:2px solid #203047;outline-offset:-2px}.place-empty{padding:12px;font-size:.8125rem;font-weight:400;line-height:1.6;color:#53657a}@media(hover:hover){.place-option:hover{background:#e4ecf3;color:#203047}}
+.release-tag{display:inline-block;margin-inline-start:8px;padding:2px 7px;border:1px solid #96394e;border-radius:4px;letter-spacing:0;font-size:.6875rem;line-height:1.5;white-space:nowrap}.filters>.destination,.filters>.station-control{display:grid;gap:8px;min-width:0;font-size:.75rem;font-weight:700;line-height:1.4}.destination-picker{position:relative;min-width:0}.destination-picker:after{content:'⌄';position:absolute;inset-inline-end:12px;top:50%;transform:translateY(-50%);pointer-events:none}.destination-picker input{padding-inline-end:30px}.place-options{position:absolute;inset-inline:0;top:calc(100% + 6px);z-index:60;max-height:280px;overflow-y:auto;overscroll-behavior:contain;background:#fff;border:1px solid #7d8c9d;border-radius:8px;box-shadow:0 8px 24px #20304722;padding:4px;min-width:0}.place-option{min-height:44px;padding:11px 10px;border-radius:4px;cursor:pointer;font-size:.875rem;font-weight:400;line-height:1.5;overflow-wrap:anywhere}.place-option[aria-selected=true]{background:#203047;color:#fff;outline:2px solid #203047;outline-offset:-2px}.place-empty{padding:12px;font-size:.8125rem;font-weight:400;line-height:1.6;color:#53657a}@media(hover:hover){.place-option:hover{background:#e4ecf3;color:#203047}}
 </style>
 </head>
 <body>
 <a class="skip" href="#search-form">경로 검색으로 이동</a>
-<header><div class="wrap"><div class="brand"><div class="brand-mark" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8"/><path d="M10 14h8M14 10v8"/><circle cx="6" cy="23" r="2"/><circle cx="22" cy="21" r="2"/></svg></div><div><div class="eyebrow">서울 상권 · 접근성 분석 <span class="release-tag">결과 비교 v2.4</span></div><h1>시간대별 상권 혼잡과 119 접근 경로</h1><p class="subtitle">상권 인구 분포를 살펴보고, 거리·시간·혼잡 회피 목적의 접근 경로를 확인합니다.</p></div></div><div class="data-badge">상권 데이터 <b>2026년 1분기</b></div></div></header>
+<header><div class="wrap"><div class="brand"><div class="brand-mark" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8"/><path d="M10 14h8M14 10v8"/><circle cx="6" cy="23" r="2"/><circle cx="22" cy="21" r="2"/></svg></div><div><div class="eyebrow">서울 상권 · 접근성 분석 <span class="release-tag">결과 비교 v2.5</span></div><h1>시간대별 상권 혼잡과 119 접근 경로</h1><p class="subtitle">상권 인구 분포를 살펴보고, 거리·시간·혼잡 회피 목적의 접근 경로를 확인합니다.</p></div></div><div class="data-badge">상권 데이터 <b>2026년 1분기</b></div></div></header>
 <main class="workspace">
 <section class="filter-panel" aria-labelledby="filter-heading"><h2 id="filter-heading" class="sr-only">경로 조건</h2>
-<form id="search-form" class="filters"><label>구 선택<select id="district"><option value="">서울 전체</option></select></label><label>출발센터 검색<input id="station" list="station-list" placeholder="예: 후암119안전센터" autocomplete="off" required><datalist id="station-list"></datalist></label><div class="destination"><label for="destination">목적지 검색</label><div class="destination-picker"><input id="destination" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="place-options" aria-describedby="place-help" placeholder="상권명 선택 또는 도로명 주소 입력" autocomplete="off" required><div id="place-options" class="place-options" role="listbox" aria-label="상권 선택" hidden></div></div><span id="place-help" class="sr-only">클릭하면 상권 목록이 열립니다. 이름을 입력해 검색하거나 방향키와 Enter로 선택하세요. 주소를 직접 입력해도 됩니다.</span></div><label>상권 시간대<select id="hour"><option value="0">00–06시</option><option value="6">06–11시</option><option value="11">11–14시</option><option value="14">14–17시</option><option value="17" selected>17–21시</option><option value="21">21–24시</option></select></label><label>최단시간 대비 허용 지연<span class="input-unit"><input id="delay" type="number" value="10" min="0" max="50" step="1" aria-label="최단시간 대비 허용 지연 퍼센트"><span aria-hidden="true">%</span></span></label><button id="search" type="submit">검색</button></form>
+<form id="search-form" class="filters"><label>구 선택<select id="district"><option value="">서울 전체</option></select></label><div class="station-control"><label for="station">출발센터 검색</label><div class="destination-picker"><input id="station" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="station-options" aria-describedby="station-help" placeholder="센터 이름 선택 또는 검색" autocomplete="off" required><div id="station-options" class="place-options" role="listbox" aria-label="출발센터 선택" hidden></div></div><span id="station-help" class="sr-only">클릭하면 선택한 구의 센터 목록이 다시 열립니다. 방향키와 Enter로 선택할 수 있습니다.</span></div><div class="destination"><label for="destination">목적지 검색</label><div class="destination-picker"><input id="destination" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="place-options" aria-describedby="place-help" placeholder="상권명 선택 또는 도로명 주소 입력" autocomplete="off" required><div id="place-options" class="place-options" role="listbox" aria-label="상권 선택" hidden></div></div><span id="place-help" class="sr-only">클릭하면 상권 목록이 열립니다. 이름을 입력해 검색하거나 방향키와 Enter로 선택하세요. 주소를 직접 입력해도 됩니다.</span></div><label>상권 시간대<select id="hour"><option value="0">00–06시</option><option value="6">06–11시</option><option value="11">11–14시</option><option value="14">14–17시</option><option value="17" selected>17–21시</option><option value="21">21–24시</option></select></label><label>최단시간 대비 허용 지연<span class="input-unit"><input id="delay" type="number" value="10" min="0" max="50" step="1" aria-label="최단시간 대비 허용 지연 퍼센트"><span aria-hidden="true">%</span></span></label><button id="search" type="submit">검색</button></form>
 <div id="address-choice" class="address-choice" hidden><label for="address-result">일치하는 주소를 선택한 뒤 검색하세요.</label><select id="address-result"></select></div></section>
 <div class="feedback"><p id="connection" class="connection" role="status" aria-live="polite">지도 연결을 확인하고 있습니다…</p><p id="status" class="status" role="status">검색 후에도 선택값은 유지됩니다. 바꿀 항목만 다시 선택하고 검색하세요.</p></div>
 <section id="result-summary" class="result-summary" hidden tabindex="-1" aria-labelledby="recommendation-title"><div class="recommendation-heading"><div><p class="result-eyebrow">분석 기준 추천</p><h2 id="recommendation-title"></h2><p id="recommendation-reason" class="recommendation-reason"></p></div><span class="recommendation-pill">추천 경로 먼저 표시</span></div><dl class="comparison-highlights"><div><dt>혼잡 회피의 추가 시간</dt><dd id="extra-time"></dd><dd class="metric-note" id="time-baseline"></dd></div><div><dt>혼잡 회피의 통과 거리 감소</dt><dd id="busy-reduction"></dd><dd class="metric-note" id="busy-baseline"></dd></div><div><dt>추천 경로 예상 주행시간</dt><dd id="recommended-duration"></dd><dd class="metric-note" id="delay-limit"></dd></div></dl><p class="recommendation-note">허용 지연 안에서 혼잡 통과 거리가 1m 이상 줄면 혼잡 회피, 그 외에는 최단시간 경로를 추천합니다. 후보 기반 분석 결과이며 실제 긴급차량 운행 지침은 아닙니다.</p></section>
@@ -47,35 +47,41 @@ const ll=p=>new window.naver.maps.LatLng(p[1],p[0]);
 function option(host,value,label=value){const el=document.createElement('option');el.value=value;el.textContent=label;host.append(el)}
 for(const d of DATA.districts)option($('district'),d);
 
-let placeMatches=[],placeActive=-1;
-function hidePlaces(){$('place-options').hidden=true;$('destination').setAttribute('aria-expanded','false');$('destination').removeAttribute('aria-activedescendant');placeActive=-1}
-function choosePlace(place){clearRoutes();addressSelection=null;$('address-choice').hidden=true;$('destination').value=place.name;hidePlaces();$('status').textContent=place.name+' 선택 완료 · 검색을 눌러 경로를 조회하세요.'}
-function openPlaces(filter=false){
- const input=$('destination'),host=$('place-options'),normalize=s=>s.replace(/\s+/g,'').toLowerCase(),query=filter?normalize(input.value):'';
- placeMatches=DATA.places.filter(p=>!query||normalize(p.name).includes(query));
- if(!filter){const selected=placeMatches.find(p=>p.name===input.value);if(selected)placeMatches=[selected,...placeMatches.filter(p=>p!==selected)]}
- const total=placeMatches.length;placeMatches=placeMatches.slice(0,50);placeActive=-1;host.replaceChildren();input.removeAttribute('aria-activedescendant');
- for(const [i,place] of placeMatches.entries()){
-  const item=document.createElement('div');item.id='place-option-'+i;item.className='place-option';item.setAttribute('role','option');item.setAttribute('aria-selected','false');item.textContent=place.name;
-  item.addEventListener('pointerdown',e=>e.preventDefault());item.addEventListener('click',e=>{e.preventDefault();choosePlace(place)});host.append(item);
+function installPicker({inputId,listId,items,label,choose,emptyText,moreText}){
+ const input=$(inputId),host=$(listId);let matches=[],active=-1;
+ const normalize=s=>s.replace(/\s+/g,'').toLowerCase();
+ function hide(){host.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');active=-1}
+ function select(item){choose(item);hide()}
+ function open(filter=false){
+  const query=filter?normalize(input.value):'';matches=items().filter(item=>!query||normalize(label(item)).includes(query));
+  if(!filter){const selected=matches.find(item=>item.name===input.value);if(selected)matches=[selected,...matches.filter(item=>item!==selected)]}
+  const total=matches.length;matches=matches.slice(0,50);active=-1;host.replaceChildren();input.removeAttribute('aria-activedescendant');
+  for(const [i,item] of matches.entries()){
+   const row=document.createElement('div');row.id=listId+'-'+i;row.className='place-option';row.dataset.name=item.name;if(item.district)row.dataset.district=item.district;
+   row.setAttribute('role','option');row.setAttribute('aria-selected','false');row.textContent=label(item);
+   row.addEventListener('pointerdown',e=>e.preventDefault());row.addEventListener('click',e=>{e.preventDefault();select(item)});host.append(row);
+  }
+  if(!matches.length||total>50){const hint=document.createElement('div');hint.className='place-empty';hint.setAttribute('role','option');hint.setAttribute('aria-disabled','true');hint.textContent=!matches.length?emptyText:moreText;host.append(hint)}
+  host.hidden=false;input.setAttribute('aria-expanded','true');
  }
- if(!placeMatches.length||total>50){const hint=document.createElement('div');hint.className='place-empty';hint.setAttribute('role','option');hint.setAttribute('aria-disabled','true');hint.textContent=!placeMatches.length?'일치하는 상권이 없습니다. 도로명·지번 주소를 입력하고 검색할 수 있습니다.':'처음 50개 상권입니다. 이름을 입력하면 전체 상권에서 찾습니다.';host.append(hint)}
- host.hidden=false;input.setAttribute('aria-expanded','true');
+ function activate(index){active=index;for(let i=0;i<matches.length;i++)host.children[i].setAttribute('aria-selected',String(i===index));if(index>=0){input.setAttribute('aria-activedescendant',host.children[index].id);host.children[index].scrollIntoView?.({block:'nearest'})}}
+ input.addEventListener('focus',()=>open(false));input.addEventListener('click',()=>open(false));input.addEventListener('blur',hide);
+ input.addEventListener('keydown',e=>{
+  if(e.isComposing)return;
+  if(e.key==='Escape'){e.preventDefault();hide();return}
+  if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();if(host.hidden)open(false);if(matches.length)activate(e.key==='ArrowDown'?Math.min(active+1,matches.length-1):Math.max(active-1,0));return}
+  if(e.key==='Enter'&&!host.hidden&&active>=0){e.preventDefault();select(matches[active])}
+ });
+ return {open,hide};
 }
-function activatePlace(index){placeActive=index;const items=$('place-options').children;for(let i=0;i<placeMatches.length;i++)items[i].setAttribute('aria-selected',String(i===index));if(index>=0){$('destination').setAttribute('aria-activedescendant',items[index].id);items[index].scrollIntoView?.({block:'nearest'})}}
-$('destination').addEventListener('focus',()=>openPlaces(false));
-$('destination').addEventListener('click',()=>openPlaces(false));
-$('destination').addEventListener('blur',hidePlaces);
-$('destination').addEventListener('keydown',e=>{
- if(e.isComposing)return;
- if(e.key==='Escape'){e.preventDefault();hidePlaces();return}
- if(e.key==='ArrowDown'||e.key==='ArrowUp'){
-  e.preventDefault();if($('place-options').hidden)openPlaces(false);if(placeMatches.length)activatePlace(e.key==='ArrowDown'?Math.min(placeActive+1,placeMatches.length-1):Math.max(placeActive-1,0));return;
- }
- if(e.key==='Enter'&&!$('place-options').hidden&&placeActive>=0){e.preventDefault();choosePlace(placeMatches[placeActive])}
-});
+function choosePlace(place){clearRoutes();addressSelection=null;$('address-choice').hidden=true;$('destination').value=place.name;$('status').textContent=place.name+' 선택 완료 · 검색을 눌러 경로를 조회하세요.'}
+function chooseStation(station){clearRoutes();$('station').value=station.name;$('status').textContent=station.name+' 선택 완료 · 목적지와 시간대는 유지했습니다. 검색을 눌러주세요.'}
+const destinationPicker=installPicker({inputId:'destination',listId:'place-options',items:()=>DATA.places,label:p=>p.name,choose:choosePlace,emptyText:'일치하는 상권이 없습니다. 도로명·지번 주소를 입력하고 검색할 수 있습니다.',moreText:'처음 50개 상권입니다. 이름을 입력하면 전체 상권에서 찾습니다.'});
+const stationPicker=installPicker({inputId:'station',listId:'station-options',items:stations,label:s=>s.name+' · '+s.district,choose:chooseStation,emptyText:'선택한 구에 일치하는 센터가 없습니다. 구나 센터 이름을 확인하세요.',moreText:'처음 50개 센터입니다. 구를 선택하거나 이름을 입력해 찾으세요.'});
+function hidePlaces(){destinationPicker.hide()}
+function openPlaces(filter=false){destinationPicker.open(filter)}
 function stations(){return DATA.stations.filter(s=>!$('district').value||s.district===$('district').value)}
-function stationOptions(){$('station-list').replaceChildren();for(const s of stations())option($('station-list'),s.name,s.name+' · '+s.district)}
+function stationOptions(){stationPicker.open(false);stationPicker.hide()}
 stationOptions();
 function emptyState(){
  const box=document.createElement('div');box.className='empty';
@@ -83,7 +89,7 @@ function emptyState(){
  const text=document.createElement('p');text.textContent='출발센터와 목적지를 선택하고 검색하면 세 경로가 표시됩니다.';
  box.append(title,text);return box;
 }
-function clearRoutes(){version++;hidePlaces();if(activeSearch)activeSearch.abort();activeSearch=null;$('search').disabled=false;$('search').textContent='검색';$('search-form').setAttribute('aria-busy','false');$('result-summary').hidden=true;for(const o of [...routes,...markers])o.setMap(null);routes=[];markers=[];$('route-cards').replaceChildren(emptyState());$('map-heading').textContent='서울 시간대별 상권 혼잡'}
+function clearRoutes(){version++;hidePlaces();stationPicker.hide();if(activeSearch)activeSearch.abort();activeSearch=null;$('search').disabled=false;$('search').textContent='검색';$('search-form').setAttribute('aria-busy','false');$('result-summary').hidden=true;for(const o of [...routes,...markers])o.setMap(null);routes=[];markers=[];$('route-cards').replaceChildren(emptyState());$('map-heading').textContent='서울 시간대별 상권 혼잡'}
 function routeMetric(host,label,value){const part=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=value;part.append(dt,dd);host.append(part)}
 function timeBadge(){const band=DATA.bands.find(([lo])=>lo===Number($('hour').value));if(band)$('time-badge').textContent=`${String(band[0]).padStart(2,'0')}–${String(band[1]).padStart(2,'0')}시 · 2026년 1분기`}
 
@@ -120,6 +126,7 @@ $('hour').addEventListener('change',()=>{clearRoutes();renderShades();$('status'
 for(const id of ['station','destination'])$(id).addEventListener('focus',()=>{$(id).select?.()});
 for(const id of ['station','destination','delay'])$(id).addEventListener('input',()=>{clearRoutes();if(id==='destination'){addressSelection=null;$('address-choice').hidden=true}});
 $('destination').addEventListener('input',()=>openPlaces(true));
+$('station').addEventListener('input',()=>stationPicker.open(true));
 $('address-result').addEventListener('change',()=>{clearRoutes();addressSelection=JSON.parse($('address-result').value);$('status').textContent='주소를 선택했습니다. 검색을 눌러 경로를 조회하세요.'});
 async function api(path,body,signal){const response=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal});if(response.status===404)throw Error('터미널에서 Ctrl+C 후 실행 파일을 다시 열어 서버를 업데이트하세요.');const result=await response.json();if(!response.ok)throw Error(result.error||'요청에 실패했습니다.');return result}
 function showAddressChoices(results){$('address-result').replaceChildren();option($('address-result'),'','주소 선택');for(const p of results)option($('address-result'),JSON.stringify(p),p.name+' · '+p.address);$('address-choice').hidden=false}
